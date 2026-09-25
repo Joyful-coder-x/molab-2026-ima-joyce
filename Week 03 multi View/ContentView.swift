@@ -6,7 +6,9 @@
 //
 
 #Playground{
-    
+    @State private var score = 0
+    var body: some View
+    Vstack{
     
     
     
