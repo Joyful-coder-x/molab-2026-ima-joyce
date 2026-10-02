@@ -1,5 +1,5 @@
 import SwiftUI
-// 3 random moving ball that "level" up when clicked 
+// 3 random moving ball that "level" up when clicked
 
 struct Ball: Identifiable {
     // Identifiable gives each ball its own identity.
@@ -14,8 +14,7 @@ struct Ball: Identifiable {
 
 struct ContentView: View {
     @State private var score = 0
-    
-    // It needs @State because their positions, levels, and counts change.
+         // It needs @State because their positions, levels, and counts change.
     @State private var balls: [Ball] = [
         // Remember the commas between array items.
         Ball(color: .red, x: -100, y: 0, level: 1, catchCount: 0),
@@ -39,6 +38,7 @@ struct ContentView: View {
                 // ZStack gives all the balls the same center. A VStack would put each ball in a different row.
                 ZStack {
                     // ForEach creates one Circle view for each index. SwiftUI 的 ForEach 是描述屏幕内容：告诉 SwiftUI“对每个 i，显示一套边框和球”。id: \.self 让 SwiftUI识别哪一套内容属于哪个 index，以便更新。
+                    // I use AI for the foEach loop, I was trying to do this with for in loop 
                     ForEach(balls.indices, id: \.self) { i in
                         Rectangle()
                             .stroke(balls[i].color.opacity(0.5), lineWidth: 2)
