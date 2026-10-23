@@ -32,7 +32,7 @@ struct LightArtwork: Identifiable, Codable, Equatable {
     let id: UUID
     let createdAt: Date
     let imageFileName: String
-
+ 
     // 【保存模型，再重建图片 Save the Model, Recreate the Image】
     // JSON 不保存 UIImage 本身，而是保存每一个光点的位置和半径，也就是“绘图配方”。
     // 读取 JSON 后，LightArtworkRenderer 可以用这些数据重新画出相同的作品。
